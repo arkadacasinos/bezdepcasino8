@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: #0a0d12;
+  --color-foreground: #ffffff;
+}
+
+:root {
+  color-scheme: dark;
+  --background: #0a0d12;
+  --foreground: #ffffff;
+}
+
+body {
+  background-color: #0a0d12;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0e1218;
+}
+::-webkit-scrollbar-thumb {
+  background: #252b36;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #394254;
+}
+
+/* Mangled styling layer */
+@layer components {
+  .z9k2-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    text-decoration: none;
+  }
+  .z9k2-pill-btn:active {
+    transform: scale(0.97);
+  }
+
+  .z9k2-glow-orange {
+    box-shadow: 0 8px 24px -4px rgba(246, 168, 59, 0.45);
+  }
+  .z9k2-glow-orange:hover {
+    box-shadow: 0 12px 30px -2px rgba(246, 168, 59, 0.6);
+  }
+
+  .z9k2-live-dot {
+    animation: z9k2-pulse 1.8s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  @keyframes z9k2-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+
+  .z9k2-hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .z9k2-hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
