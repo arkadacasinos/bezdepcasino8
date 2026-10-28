@@ -9,6 +9,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className="dark bg-[#0a0d12]">
       <head>
+        <meta name="yandex-verification" content="2b25f879955d713d" />
         <title>Бездепозитные бонусы казино за регистрацию — актуальные бездепы 2026</title>
         <meta
           name="description"
